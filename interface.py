@@ -26,6 +26,15 @@ try:
     print('\tSkype interface available')
 except ImportError:
     print('\tSkype interface not available.')
+    interfaces['skype'] = False
+
+try:
+    import tkMessageBox #For skype interfacing
+    interfaces['messagebox'] = True
+    print('\tMessage Box interface available')
+except ImportError:
+    print('\tMessage Box interface not available.')
+    interfaces['messagebox'] = False
 
 if interfaces['os'] == 'win':
     try:
